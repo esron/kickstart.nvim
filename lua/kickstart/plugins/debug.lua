@@ -138,12 +138,12 @@ return {
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- Install golang specific config
-    require('dap-go').setup {
-      delve = {
-        -- On Windows delve must be run attached or it crashes.
-        -- See https://github.com/leoluz/nvim-dap-go/blob/main/README.md#configuring
-        detached = vim.fn.has 'win32' == 0,
-      },
-    }
+    require('dap-go').setup()
+
+    -- Install python specific config
+    require('dap-python').setup()
+
+    -- qontract-reconcile debug configurations
+    require('dap.ext.vscode').load_launchjs()
   end,
 }
