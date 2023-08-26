@@ -1081,6 +1081,18 @@ vim.keymap.set("n", "<leader>fg",
   ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
   { desc = '[F]ind using [G]rep with args' }
 )
+
+-- Indent highlight
+vim.opt.list = true
+vim.opt.listchars:append "space:."
+vim.opt.listchars:append "eol:↴"
+
+require("indent_blankline").setup {
+  show_end_of_line = true,
+  show_current_context = true,
+  show_current_context_start = true,
+}
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
