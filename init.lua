@@ -1006,6 +1006,8 @@ vim.o.completeopt = 'menuone,noselect'
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
 
+-- Indent with spaces
+vim.o.expandtab = true
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
