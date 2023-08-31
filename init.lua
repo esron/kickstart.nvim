@@ -1009,6 +1009,9 @@ vim.o.termguicolors = true
 
 -- Indent with spaces
 vim.o.expandtab = true
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+
 -- [[ Basic Keymaps ]]
 
 -- Keymaps for better default experience
