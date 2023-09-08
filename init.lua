@@ -1088,6 +1088,9 @@ vim.keymap.set("n", "<leader>fg",
   { desc = '[F]ind using [G]rep with args' }
 )
 
+-- Keep cursor in the middle of the screen
+vim.opt.scrolloff = 999
+
 -- Indent highlight
 vim.opt.list = true
 vim.opt.listchars:append "space:."
