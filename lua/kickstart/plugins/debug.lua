@@ -70,25 +70,7 @@ return {
 
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
-    dapui.setup {
-      -- Set icons to characters that are more likely to work in every terminal.
-      --    Feel free to remove or use ones that you like more! :)
-      --    Don't feel like these are good choices.
-      icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
-      controls = {
-        icons = {
-          pause = '⏸',
-          play = '▶',
-          step_into = '⏎',
-          step_over = '⏭',
-          step_out = '⏮',
-          step_back = 'b',
-          run_last = '▶▶',
-          terminate = '⏹',
-          disconnect = '⏏',
-        },
-      },
-    }
+    dapui.setup()
 
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close
@@ -101,6 +83,16 @@ return {
     require('dap-python').setup()
 
     -- qontract-reconcile debug configurations
-    require('dap.ext.vscode').load_launchjs()
+    -- require('dap.ext.vscode').load_launchjs()
+
+    -- attach remote to dap console
+    table.insert(require('dap').configurations.python, {
+      type = 'python',
+      request = 'attach',
+      host = '127.0.0.1',
+      port = 5678,
+      name = 'Attach remote to dap console',
+      console = 'integratedTerminal',
+    })
   end,
 }
