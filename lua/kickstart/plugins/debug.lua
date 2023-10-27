@@ -72,7 +72,7 @@ return {
 
     -- Install python specific config
     require('dap-python').setup()
-
+    require('dap-python').test_runner = 'pytest'
     -- qontract-reconcile debug configurations
     -- require('dap.ext.vscode').load_launchjs()
 
