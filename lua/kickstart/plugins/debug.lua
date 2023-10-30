@@ -123,8 +123,12 @@ return {
     require('dap-go').setup()
 
     -- Install python specific config
-    require('dap-python').setup()
-    require('dap-python').test_runner = 'pytest'
+    local dap_python = require 'dap-python'
+    dap_python.setup()
+    dap_python.test_runner = 'pytest'
+
+    -- Test closest method (to be used to debug test methods)
+    vim.keymap.set('n', '<F4>', dap_python.test_method, { desc = 'Debug: Run Closest Method' })
     -- qontract-reconcile debug configurations
     -- require('dap.ext.vscode').load_launchjs()
 
