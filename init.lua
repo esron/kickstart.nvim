@@ -1076,27 +1076,22 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Open file tree
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 
 -- Move lines up and donw
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 -- Live Grep with args
-vim.keymap.set("n", "<leader>fg",
-  ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>",
-  { desc = '[F]ind using [G]rep with args' }
-)
+vim.keymap.set('n', '<leader>fg', ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", { desc = '[F]ind using [G]rep with args' })
 
 -- Keep cursor in the middle of the screen
 vim.opt.scrolloff = 999
 
 -- Indent highlight
 vim.opt.list = true
-vim.opt.listchars:append "space:."
-vim.opt.listchars:append "eol:↴"
-
-require("ibl").setup()
+vim.opt.listchars:append 'space:.'
+vim.opt.listchars:append 'eol:↴'
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -1304,8 +1299,7 @@ local on_attach = function(_, bufnr)
 
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-    vim.lsp.buf.format()
-    { async = true }
+    vim.lsp.buf.format() { async = true }
   end, { desc = 'Format current buffer with LSP' })
 end
 
@@ -1357,9 +1351,6 @@ local servers = {
     },
   },
 }
-
--- Setup neovim lua configuration
-require('neodev').setup()
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
