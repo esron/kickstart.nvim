@@ -135,7 +135,7 @@ return {
       type = 'python',
       request = 'attach',
       host = '127.0.0.1',
-      port = 5678,
+      port = 5679,
       name = 'Attach remote to dap console',
       console = 'integratedTerminal',
     })
