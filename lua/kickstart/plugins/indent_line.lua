@@ -4,6 +4,9 @@ return {
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
     main = 'ibl',
+    show_end_of_line = true,
+    show_current_context = true,
+    show_current_context_start = true,
     opts = {},
   },
 }
