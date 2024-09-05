@@ -3,6 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-	"wakatime/vim-wakatime",
-	"jparise/vim-graphql"
+  'wakatime/vim-wakatime',
+  'jparise/vim-graphql',
+  'nvim-treesitter/nvim-treesitter-context',
 }
