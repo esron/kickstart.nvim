@@ -135,9 +135,15 @@ return {
       type = 'python',
       request = 'attach',
       host = '127.0.0.1',
-      port = 5679,
-      name = 'Attach remote to dap console',
+      port = 5678,
+      name = 'Attach to debugpy qontract-development-cli',
       console = 'integratedTerminal',
+      pathMappings = {
+        {
+          remoteRoot = '/work',
+          localRoot = vim.fn.getcwd(),
+        },
+      },
     })
   end,
 }
